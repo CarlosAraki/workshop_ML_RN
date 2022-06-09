@@ -8,7 +8,6 @@ RUN conda install \
     pandas \
     matplotlib \
     jupyterlab
-COPY ./README.md /project
 COPY ./data /project/data
 COPY ./notebooks /project/notebooks
 CMD ["jupyter-lab","--ip=0.0.0.0","--no-browser","--allow-root"]

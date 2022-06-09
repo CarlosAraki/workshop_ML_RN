@@ -1,0 +1,15 @@
+tasks:
+  - name: jupyter
+    init: >
+     docker-compose down 
+     docker stop $(docker ps -a -q)  
+     docker rm $(docker ps -a -q) 
+     docker volume rm $(docker volume ls -q) 
+     docker rmi -f $(docker images -aq) 
+     docker system prune -f -a 
+    command: docker-compose up --build
+  
+ports:
+  - port: 3000-8999
+    onOpen: open-preview
+    visibility: public
