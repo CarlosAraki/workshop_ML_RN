@@ -1,14 +1,9 @@
 tasks:
   - name: jupyter
-    init: 'iniciando'
+    init: echo 'iniciando'
      
-    command: docker-compose down 
-     docker stop $(docker ps -a -q)  
-     docker rm $(docker ps -a -q) 
-     docker volume rm $(docker volume ls -q) 
-     docker rmi -f $(docker images -aq) 
-     docker system prune -f -a 
-     docker-compose up --build
+    command: docker-compose up --build
+    
   
 ports:
   - port: 3000-8999
