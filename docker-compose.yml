@@ -7,3 +7,5 @@ services:
       ports:
         - 8888:8888
       container_name: datascience-notebook-container
+      environment:
+        JUPYTER_TOKEN: "bacon"
